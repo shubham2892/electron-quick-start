@@ -7,6 +7,7 @@ const BrowserWindow = electron.BrowserWindow
 const path = require('path')
 const url = require('url')
 
+const globalShortcut = electron.globalShortcut
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -22,6 +23,9 @@ function createWindow () {
     slashes: true
   }))
 
+  globalShortcut.register('MediaNextTrack', () => {
+    console.log('MediaNextTrack is pressed')
+  })
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 
